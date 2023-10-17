@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transiton-Transform-Animation</title>
+    <style>
+      header {
+        text-align: center;
+        margin: 1rem;
+      }
+      
+      main {
+        margin: 2rem;
+        text-align: center;
+      }
+      main p {
+        margin-bottom: 1rem;
+      }
+
+      code {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        color: red;
+      }
+      main > ul {
+        padding: 2rem;
+        line-height: 30px;
+        font-size: 1.2rem;
+        text-align: justify;
+        word-break: break-all;
+      }
+
+      main > ul > li {
+        list-style-type: decimal-leading-zero;
+      }
+      li u {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TRANSITION</h1>
+      <p>
+        CSS Transition Özelliği, bir elemanın iki state’i arasında transition,
+        yani geçiş yapmanızı sağlar. Genellikle hover gibi psuedo sınıfları ile
+        kullanılır.
+      </p>
+      <code
+        >transition: property name | duration | easing function | delay;</code
+      >
+      <ul>
+        <li>
+          <u>transition-property:</u> transition’ı uygulamak istediğimiz bir
+          veya birden fazla CSS property’sini belirtiriz.
+        </li>
+        <li>
+          <u>transition-duration:</u> Transition işleminin ne kadar sürede
+          gerçekleşeceğini belirtiriz. Tanımladığınız her bir
+          transition-property için dilerseniz tek bir duration
+          belirtebilirsiniz. Yada her bir property için ayrı ayrı transition
+          süresi belirtebilirsiniz.
+        </li>
+        <li>
+          <u>transition-timing-function</u>: transition’ın süresince hangi hızda
+          ve hangi aşamada olacağını belirtiriz.
+          <ul>
+            <li>
+              <u>ease:</u> Transition-timing-functionın default değeridir.
+              Transition yavaş başlar ortalarına doğru hızlanır ve yavaşlayarak
+              sona erer.
+            </li>
+            <li>
+              <u>ease-in:</u> Yavaş başlar ve transition sonuna kadar hızlanarak
+              devam eder.
+            </li>
+            <li>
+              <u>ease-out:</u> Transition hızlı başlar ve transition sonuna
+              doğru yavaşlar.
+            </li>
+            <li>
+              <u>linear:</u> Transition sabit hızda başlar. Öyle devam eder ve
+              aynı hızda sona erer.
+            </li>
+            <li>
+              <u>cubic-bezier:</u> cubic-bezier ile kendi transition efektinizi
+              belirleyebilirsiniz.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <u>transition-delay:</u> Bir geçişin başlamadan önce ne kadar süre
+          bekletileceğini belirleyebilirsiniz.
+        </li>
+      </ul>
+    </main>
+    <main>
+      <h1>TRANSFORM</h1>
+      <p>
+        CSS Transform Özelliği, Türkçesiyle Dönüştürme özelliği sayesinde div
+        bloklarına veya görsellere çeşitli görsel efektler uygulayabiliriz.
+      </p>
+      <ul>
+        <li>
+          <u>rotateX() işlevi</u>: bir öğeyi deforme etmeden apsis (yatay eksen
+          - x ekseni) etrafında döndüren bir dönüşümü tanımlar.Nesnenin kaç
+          derece döneceğini <strong>deg</strong> türünde belirtmeliyiz.90 ve 270
+          deerelecelerde yazılar tam dik olduklarından ve 3 boyutlu olarak
+          bakamadığımız için gözükmezler.
+        </li>
+        <li>
+          <u>rotateY() işlevi</u>: bir öğeyi ordinat (dikey eksen - y ekseni)
+          etrafında deforme etmeden döndüren bir dönüşümü tanımlar.Nesnenin kaç
+          derece döneceğini <strong>deg</strong> türünde belirtmeliyiz.
+        </li>
+        <li>
+          <u>rotate() işlevi</u>: adından da anlaşılacağı üzere nesneyi
+          döndürmek için kullanılan bir parametre türüdür. Nesnenin kaç derece
+          döneceğini <strong>deg</strong> türünde belirtmeliyiz.
+        </li>
+        <li>
+          <u>skew() işlevi</u>: 2B düzlemde bir öğeyi eğen bir dönüşümü
+          tanımlar.skew() işlevi, her yönde uygulanacak eğriltme miktarını
+          temsil eden bir veya iki parametre ile belirtilir. Yalnızca bir
+          parametre verilirse x ekseni için kullanılır ve y ekseninde eğrilik
+          olmaz. Parametre olarak vereceğimiz değer
+          <strong>angel(açı)</strong> formatında olmalıdır.Yamultma işlemini
+          yaparken derece ile ne miktarda yamulacağını belirtmekteyiz.
+        </li>
+        <li>
+          <u>scaleX() işlevi</u>: bir HTML elementinin yatay (x) eksende
+          ölçeklendirilmesini sağlar. Bu özellik, elementin genişliğini veya
+          daraltmasını kontrol etmek için kullanılır.Bu fonksiyona verilen
+          parametre, ölçeklendirme değerini belirtir. Ölçeklendirme değeri 1 ise
+          elementin orijinal genişliği korunur. Değer 1'den büyük ise element
+          genişletilir, değer 1'den küçük ise daraltılır. Negatif değerlerde
+          verilebilir. Örneğin -1 değeri verirsek x ekseninde simetrik olarak
+          yansıtır.
+        </li>
+        <li>
+          <u>scaleY() işlevi</u>:bir HTML elementinin dikey (y) eksende
+          ölçeklendirilmesini sağlar. Bu özellik, elementin yüksekliğini veya
+          daraltmasını kontrol etmek için kullanılır. Verilen ölçeklendirme
+          değerleri scaleX ile aynıdır.
+        </li>
+        <li>
+          <u>scale() işlevi</u>:bir HTML elementini hem yatay (x) hem de dikey
+          (y) eksende aynı oranda ölçeklendirmek için kullanılır.Tek parametre
+          verirske eşit oranda ölçeklendirir.İlk parametre x ekseni,ikinci
+          parametre y eksenini temsil eder.
+        </li>
+        <li>
+          <u>translateX() işlevi</u>: bir HTML elementini yalnızca yatay (x)
+          eksende belirli bir mesafede hareket ettirmek için kullanılır. Bu
+          özellik, elementin yatay konumunu değiştirmek ve yatay yönde hareket
+          etmek için kullanılır. Fonksiyona verilen parametreler, elementin
+          yatay hareket miktarını belirtir. Parametreler px (piksel), % (yüzde)
+          veya em (ems) gibi birimlerle ifade edilebilir. Negatif değerler
+          alabilir.
+        </li>
+        <li>
+          <u>translateY() işlevi</u>: bir HTML elementini yalnızca dikey (y)
+          eksende belirli bir mesafede hareket ettirmek için kullanılır. Bu
+          özellik, elementin dikey konumunu değiştirmek ve dikey yönde hareket
+          etmek için kullanılır. Fonksiyona verilen parametreler, elementin
+          dikey hareket miktarını belirtir. Parametreler px (piksel), % (yüzde)
+          veya em (ems) gibi birimlerle ifade edilebilir. Negatif değerler
+          alabilir.
+        </li>
+        <li>
+          <u>translate() işlevi</u>: bir HTML elementini belirli bir mesafede
+          yatay (x) ve dikey (y) eksende hareket ettirmek için kullanılır. Bu
+          özellik, elementin konumunu değiştirmek ve hareket etmek için
+          kullanılır.. Fonksiyona verilen parametreler, elementin yatay ve dikey
+          hareket miktarını belirtir. Parametreler px (piksel), % (yüzde) veya
+          em (ems) gibi birimlerle ifade edilebilir. Negatif değerler alabilir.
+          İlk parametre x eksenini, ikinci parametre de y eksenini temsil eder.
+        </li>
+      </ul>
+    </main>
+    
+    <main>
+      <header>
+        <h1>ANIMATION</h1>
+        <p>
+          CSS animasyonları ile HTML öğelerini animasyonu hale getirerek farklı ve
+          eğlenceli senaryolar oluşturabilirsiniz.
+        </p>
+        <p>
+          CSS animation ile bir HTML öğesinin başlangıç stilinden bitiş stiline
+          kadar olan süreçte efektli bir şekilde geçiş yapmasıdır. @keyframes
+          kuralı ile animasyon sürecini yapılandırmamız gerekmektedir.
+        </p>
+        <code
+          >animation: @keyframes name | duration | easing-function | delay |
+          iteration-count | direction | fill-mode | play-state</code
+        >
+      </header>
+      <ul>
+        <li>
+          <u>animation-name:</u> Kullanmak istediğimiz animasyonun ismi.
+          Yukarıda @keyframes ornek-animasyon olarak tanımladığımız
+          ornek-animasyon değerini buraya yazıyoruz.
+        </li>
+        <li>
+          <u>animation-duration:</u> CSS animasyonun gerçekleşme süresini
+          belirtir. saniye birimi s ve mili-saniye birimi ms 1s = 1000ms
+          kullanılabilir.
+        </li>
+        <li>
+          <u>animation-timing-function:</u> Bu özellik animasyonun zamanlamasını
+          daha esnek hale getirerek yapılandırır. İvmelenmeler ekleyerek
+          animasyonda geçişleri daha estetik bir hale getirmek için bir çok web
+          geliştirici tarafından kullanılmaktadır.
+          <ul>
+            <li>
+              <u>ease:</u>cubic-bezier(0.25, 0.1, 0.25, 1.0) değerine eşittir.
+              ease-in değerinde animasyon ortaya doğru hızlanır ve sonrasında
+              yavaşlayarak durur.
+            </li>
+            <li>
+              <u>ease-in:</u>cubic-bezier(0.42, 0, 1.0, 1.0) değerine eşittir.
+              ease-in değerinde animasyon yavaş bir şekilde başlar ve
+              tamamlanana kadar hızlanır.
+            </li>
+            <li>
+              <u>ease-out:</u>cubic-bezier(0, 0, 0.58, 1.0) değerine eşittir.
+              Animasyon hızlı bir şekilde başlar ve yavaşlayarak sonlanır.
+            </li>
+            <li>
+              <u>ease-in-out:</u>cubic-bezier(0.42, 0, 0.58, 1.0) değerine
+              eşittir. Animasyon yavşça başlar ve hızlanarak geçiş yapar, sonra
+              tekrar yavaşlayarak animasyonu tamamlar.
+            </li>
+            <li>
+              <u>linear:</u>cubic-bezier(0.0, 0.0, 1.0, 1.0) değerine eşittir.
+              Animasyonun başından sonuna kadar animasyon hızı eşit bir şekilde
+              devam eder.
+            </li>
+            <li>
+              <u>steps:</u>Adımlı olarak animasyonu çalıştırır, animasyon akmaz
+              belirlenen sayıya göre bölerek çalışır.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <u>animation-iteration-count:</u> Animasyonun tekrar sayısı; kaç kez
+          tekrar edeceğini belirtebilirsiniz. 3 olarak belirttiğimizde animasyon
+          3 defa çalışacaktır. Yada <strong>infinite</strong> diyerek sonsuz
+          çalışmasını isteyebiliriz.
+        </li>
+        <li>
+          <u>animation-direction:</u> Animasyonun yönü. Varsayılan olarak
+          animasyon, baştan sonra doğru çalışacaktır. Animasyonun yönünü, yön
+          değiştirip değiştirmeyeceğini, başlangıç noktasında kendini tekrar
+          edip etmeyeceği animation-direction ile belirlenir.
+          <ul>
+            <li><u>normal:</u> Animasyon normal sürecinde oynar.</li>
+            <li>
+              <u>reverse</u> Animasyon geriden oynatılmaya başlanır.Son adımdan
+              ilk adıma gelir.
+            </li>
+            <li>
+              <u>alternate:</u> Animasyon ilk kareden başlar, son kareye
+              geldiğinde bu sefer tam tersine son kareden başlar ve tekrar ilk
+              karede biter.
+            </li>
+            <li>
+              <u>alternate-reverse:</u> Animasyon son kareden başlar, ilk kareye
+              geldiğinde bu sefer tam tersine ilk kareden başlar ve son karede
+              biter.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <u>animation-delay:</u> özelliği animasyonun nekadar gecikmeli olacak
+          başlayacağını belirtir. saniye birimi s ve mili-saniye birimi ms.
+          Örneğin, 2s olarak belirttiğimizde animasyon 2 saniye gecikmeli olarak
+          başlayacaktır.
+        </li>
+        <li>
+          <u>animation-fill-mode:</u> CSS animasyonları animasyon başlamadan
+          önce ve animasyon tamamlandıktan sonra normal şartlar altında
+          animasyonun eklendiği HTML öğesini etkilemez. Normal şartlarda
+          animasyondan tamamlandıktan sonra HTML öğesi animasyondan önceki
+          stiline döner. İşte bu durumda bazı istenmeyen sert geçişler
+          yaşanabilir. Örnek: Eğer animasyon bittiğinde arka plan renginiz bir
+          anda kırmızdan yeşile sert bir geçiş yapıyor ise bu tarz durumlardan
+          kurtulmak için animation-fill-mode özelliğini kullanmanız
+          gerekecektir.
+          <ul>
+            <li>
+              <u>none:</u>Animasyon yürütülmediği takdirde öğeye her hangi bir
+              stil uygulanmaz. Öğe animasyon tamamlandıktan sonra eski stiline
+              geri döner.
+            </li>
+            <li>
+              <u>forwards:</u>Animasyon uygulanan HTML öğesi animasyonun son
+              kademesindeki stillere sahip olarak animasyonu bitirecektir.
+              Animasyon tamamlandıktan sonra orjinal stilinde göstermez
+              animasyonun son karesindeki stiller onu değiştirir.
+            </li>
+            <li>
+              <u>backwards:</u>Animasyondaki ilk sahnenin stillerine sahip
+              olacaktır. Animasyon başladığı noktada bitecektir. Ancak bu
+              değerler animation-direction değerlerine bağlı değişir.
+            </li>
+            <li>
+              <u>both:</u>hem başlangıç hem de son karede animasyonun stillerini
+              takip edecek ve animasyonun özelliklerini bu sayede genişletmiş
+              olursunuz.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <u>keyframes:</u> animasyonun kademeli olarak oluşturlmasını sağlayan
+          bir kuraldır. Tüm animasyon sahnelerini @kayframes animationName
+          içerisinde tanımlıyoruz.
+          <pre>
+  @keyframes animationName {
+              from{/*başlangıç noktası*/
+                  *istenilen özellikler*
+              }
+              to {/*bitiş noktası*/
+                  *istenilen özellikler*
+              }
+          }
+          </pre>
+          <pre>
+  @keyframes animationName {
+              0%{/*başlangıç noktası*/
+                  *istenilen özellikler*
+              }   
+              ...
+              100% {/*bitiş noktası*/
+                  *istenilen özellikler*
+              }
+          }
+          </pre>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
