@@ -1,8 +1,9 @@
 //? code challenge
 
-
 let arr1 = [100, 4, 200, 1, 3, 2];
+
 let arr2 = [5, 7, 8, 10, 2, 3, 6];
+
 let consectiveArray = [];
 const consective = (arr) => {
   let sorted = arr1.sort((a, b) => a - b);
