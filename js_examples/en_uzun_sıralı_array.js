@@ -6,6 +6,7 @@ let arr2 = [5, 7, 8, 10, 2, 3, 6];
 
 let consectiveArray = [];
 const consective = (arr) => {
+  // const consectiveParts = [];
   let sorted = arr.sort((a, b) => a - b);
 
   for (let i = 0; i < arr.length; i++) {
