@@ -1,51 +1,47 @@
-// arrays iterations questions (forEach, map, filter, reduce)
-​
-​
-// soru 1: bir dizideki sayıların ortalamasını bulan fonksiyonu yazınız? 
-​
-// let numbers1 = [1, 2, 3, 45, 65];
-
-// ​let sum=0;
-
-// numbers1.forEach((v)=>sum+=v);
-
-// console.log(sum/numbers1.length);
-​
-​
-​
-// soru 2: Soru: Bir dizi içerisindeki sayıların karesini alarak her bir sayıyı konsola yazdırın.
-​
 let numbers3 = [1, 2, 3, 4, 5];
 
-numbers3.forEach((curr) => {
-    let kare = curr * curr;
-    console.log(kare);
-  });
-​
-​
-​
-// soru 3: Soru: Bir dizi içerisindeki sayıların karesini alarak yeni bir dizi oluşturun. Ardından, bu yeni dizideki çift sayıları filtreleyerek sadece çift sayıları içeren bir başka dizi oluşturun.
-​
-let numbers4 = [1, 2, 3, 4, 5];
-​
-​
-// soru 4: Soru: Verilen bir diziyi tersine çevirin, ancak yalnızca forEach kullanarak yapın (reverse() kullanmadan).
-​
-let numbers5 = [1, 2, 3, 4, 5];
-​
-​
-// soru 5: Soru: Bir dizi içindeki metin öğeleri içeren bir dizi verildiğinde, her öğeyi tersine çevirerek yeni bir dizi oluşturun.
-// çıktı : ["tpircSavaJ", "nohtyP", "avaJ", "++C"]
-​
+let sum = 0;
+
+numbers3.forEach((v) => (sum += v));
+
+console.log(sum / numbers3.length);
+
+console.log("******************************");
+
+numbers3.forEach((a) => console.log(a ** 2));
+
+console.log("******************************");
+
+let numbersKareCift = numbers3
+  .map((x) => x ** 2)
+  .filter((cift) => cift % 2 !== 1);
+
+console.log(numbersKareCift);
+
+console.log("******************************");
+
+let reversed = [];
+numbers3.forEach((x) => {
+  reversed.unshift(x);
+});
+
+console.log(reversed);
+
+console.log("******************************");
+
 let words = ["JavaScript", "Python", "Java", "C++"];
-​
-​
-// soru 6: Soru: Bir dizi içindeki asal sayıları filtreleyerek  yeni bir dizi oluşturun.
-​
-let numbers6 = [1, 2, 3, 8, 21, 23, 41, 44, 53];
-​
-​
-​
-// soru 7: Soru: Bir dizideki sayıların karelerinden çift sayıların iki katlarının toplamını bulun.
-​
-let numbers7 = [1, 2, 3, 4, 5];
+let reversedWords = words.map((x) => x.split("").reverse().join(""));
+console.log(reversedWords);
+
+console.log("******************************");
+
+const numbers = [0, 1, 2, 3, 4, 5];
+
+let evenNumbers = numbers.filter((even) => even % 2 == 0);
+//Write your Code here
+console.log(evenNumbers); // [0, 2, 4]
+console.log("******************************");
+
+let arrs = [1, 2, 3, 4, 5];
+
+arrs.ma
