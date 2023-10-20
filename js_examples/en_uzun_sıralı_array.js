@@ -1,11 +1,12 @@
-//? code challenge
-
-let arr1 = [11,100,9, 4,10, 12, 200, 1, 3, 2,13];
+let arr1 = [11,97, 100, 9, 4, 10, 12,98, 200, 1, 3, 2, 13];
 
 let arr2 = [5, 7, 8, 10, 2, 3, 6];
 
 let consectiveArray = [];
 const consective = (arr) => {
+  if (arr == []) {
+    return [];
+  }
   const consectiveParts = [];
   let sorted = arr.sort((a, b) => a - b);
 
@@ -17,13 +18,17 @@ const consective = (arr) => {
 
       consectiveArray.push(sorted[i + 1]);
     } else {
-      consectiveParts.push(consectiveArray);
+      consectiveArray.length != 0 && consectiveParts.push(consectiveArray);
       consectiveArray = [];
     }
   }
-
-  return consectiveParts.filter((siraliParça)=>siraliParça.length==(Math.max(...consectiveParts.map((siraliparca)=>siraliparca.length))))[0]           
-  
+  // console.log(sorted);
+  // console.log(consectiveParts);
+  return consectiveParts.filter(
+    (siraliParça) =>
+      siraliParça.length ==
+      Math.max(...consectiveParts.map((siraliparca) => siraliparca.length))
+  )[0];
 };
 
 console.log(consective(arr1));
