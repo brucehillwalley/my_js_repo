@@ -238,3 +238,8 @@ const concatinatedNames1=team.map((p)=>(
 
 console.log(concatinatedNames);
 console.log(concatinatedNames1);
+
+
+/* -------------------------------------------------------------------------- */
+//*                                  POSTCLASS                                 */
+/* -------------------------------------------------------------------------- */
