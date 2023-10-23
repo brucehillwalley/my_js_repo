@@ -123,9 +123,57 @@ console.log(carObject.Model);
 
 console.log("******* Objects *********");
 
-//? Square bracket yöntemi
-console.log(arac["model"]);
+//? Square bracket yontemi
+console.log(carObject["model"])
+console.log(carObject["power"]["fosil"])
 
+//! bu yontem key isimlerinin degiskenlerde saklanmasına izin verdigi icin dinamik olarak obje erisimlerinde kullanılabilir.
+// const key = prompt(
+//   "Aracin hangi bilgisini ogrenmek istersiniz, marka, model,motor,vites ?"
+// )
 
+// console.log(arac[key])
 
-const key =prompt()
+carObject.model = "Q3"
+carObject["power"]["fosil"] = "Mazot"
+console.log(carObject)
+
+//? Uncaught TypeError: Assignment to constant variable.
+// carObject = [4, 3, 2]
+
+carObject.sunroof = true
+console.log(carObject)
+
+console.log("******* Objects *********");
+
+/* -------------------------------------------------------------------------- */
+/*                              OBJECT METOTLARI                              */
+/* -------------------------------------------------------------------------- */
+const dogum=2000
+const personel={
+    adi:"ahmet",
+    soyadi:"balcı",
+    dogum:1990,
+    maas:1500,
+    ehliyet:true,
+    diller:["English", "German"],
+    yasHesapla:function(){
+        console.log(this); //personeli görür
+        return new Date().getFullYear()-this.dogum //?personel.dogum kullanılabilir ama best practice this dir
+    },
+    ozet:()=>{
+        console.log(this);
+        `${this.adi} ${this.soyadi} ${this.yasHesapla()} yasindadir` //? arrow da this kullanılmaz.
+    }
+}
+console.log(this); //window objesini görör
+console.log(personel.yasHesapla());
+console.log(personel.ozet());
+
+//! NOT: arrow fonksiyonlari ozellikle callback fonksiyonu olarak
+//! kullanilmak ve bu fonksiyonlarda this keyword kullanim
+//! gereksinimini kaldirmak icin gelistirilmistir.
+//! Lexical context'e sahiptirler.Dolayisiyla, bir obje fonksiyonu
+//! olarak kullanilirsa, this kelimesi global scope'u (window nesnesini)
+//! gösterir. Bunu engellemek için object fonksiyonlarini tanimlarken
+//! diger (func. expression veya declaration) yontemlerini kullanabilir.
