@@ -38,7 +38,17 @@ function sudokuCoz(board){
 let isValid=false
 while(!isValid){
 
+//  //* findIndex()
+// //*-----------------------------------------------------------
+// //? Aldigi callback fonksiyonuna gore test gerceklestirir.
+// //? Kosulu saglayan ilk dizi elemaninin indeksini dondurur.
+// //? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
 
+// //?Ornek: Yasi 30 dan buyuk olan ilk elemanin indexini yazdirin
+// const foundIndex = ages.findIndex((age) => age > 18)
+// console.log(foundIndex) //? 1
+
+  //* findindex ile ilk 0 ın indeksini bul
 
 
 
@@ -55,6 +65,7 @@ for (let satir of board){
    }
 
    }
+   //? some ile x==0 dayapılabilirdi
    //?for of ile hala 0 var mı kontrolü yaptım
 }
 
