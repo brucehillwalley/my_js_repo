@@ -76,8 +76,6 @@ const newSentence = text
   .join(" ");
 console.log(newSentence);
 
-
-
 console.log("**************************************************************");
 
 //? You have an array of objects representing books, and each object has properties like
@@ -137,3 +135,76 @@ const goodRate = function (kitaplar) {
 };
 
 console.log(goodRate(books));
+
+const team = {
+  name: "ibrahim",
+  yası: 36,
+  getName: function () {
+    return "hello";
+  },
+  greetings() {
+    return "sss";
+  },
+};
+
+console.log(team.hasOwnProperty("yası"));
+console.log(Object.keys(team));
+console.log(Object.getOwnPropertyNames(team));
+console.log(Object.getOwnPropertyNames(team));
+console.log(team.greetings());
+
+const emptyObj = new Object();
+
+let arr = [1, 2, 4];
+console.log(arr);
+console.log(typeof arr);
+
+let arr2 = arr; //? referansları kopyalar ikisi değişir.
+console.log(arr);
+
+//? deep copy aşağıda
+const ingredientsList = ["noodles", { list: ["eggs", "flour", "water"] }];
+const ingredientsListDeepCopy = JSON.parse(JSON.stringify(ingredientsList));
+
+let [a, b, c, d] = arr;
+console.log(d);
+
+//? rest geri kalan
+const arrs = [1, 2, 3, 4, 5];
+const [k, l, ...geri] = arrs;
+
+console.log(k); // 1
+console.log(l); // 2
+console.log(geri); // [3, 4, 5]
+
+//?14.soru
+
+function firstletter(text) {
+  let splittedText = text.split(" ");
+  let result = [];
+  splittedText.forEach((element) => {
+    result.push(element[0]);
+  });
+  return result.join("");
+}
+
+const name = "John Ronald Reuel Tolkien";
+console.log(firstletter(name));
+
+console.log(arr.map((element) => element ** 2));
+
+//? 16.soru
+const dizim = [1, 2, 3, 4, 5];
+const sumOfEvenNumbers = dizim.reduce((total, num) => {
+  if (num % 2 === 0) {
+    return total + num;
+  }
+  return total;
+}, 0);
+
+console.log(sumOfEvenNumbers); // 6
+//?Yukarıdaki örnekte, arr dizisindeki her bir elemanı kontrol ederek çift sayıları toplamak için 
+//?reduce yöntemini kullandık. Başlangıç değeri olarak 0 verdik ve her bir elemanı kontrol ederek
+//? çift sayıları topladık. Sonuç olarak, dizideki çift sayıların toplamı olan 6'yı elde ettik.
+
+//?18.soru
