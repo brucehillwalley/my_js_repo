@@ -1,0 +1,39 @@
+
+
+.banner{
+    background-image: url(img/banner.jpeg);
+
+    background-size: cover;
+
+    background-position: center;
+
+    height: calc(100vh - 56px);
+
+    color: purple;
+
+    text-align: center;
+
+    padding-top: 100px;
+    
+}
+
+
+.icons {
+    background-color: #dc3545;
+    color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+ 
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+
