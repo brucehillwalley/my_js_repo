@@ -73,4 +73,4 @@ let rollTheDices = (number) => {
     return result;
 }
 
-console.log(rollTheDices(10))
+console.log(...(rollTheDices(10).map(e=>e+="\n")))

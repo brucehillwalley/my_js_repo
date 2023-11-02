@@ -52,3 +52,15 @@ let text = "dog";
 let word = "";
 let splited = text.split("");
 console.log(splited.map((harf, index, array) => array.slice(index)).flat());
+
+console.log("*********BRUCE*************");
+// AND opratörü
+// her iki değer de true ise son true değeri döndürür, aksi takdirde ilk false değeri döndürür
+
+console.log(true && 1);  // 1
+console.log(false && 1); // false
+
+// OR opratörü
+// değerlerden biri true ise ilk true değeri döndürür, aksi takdirde her ikisi de false ise son false değeri döndürür
+console.log(1 || false); // 1
+console.log(false || 0); // 0
