@@ -98,7 +98,7 @@ header {
   display: flex;
   margin-top: 1rem;
   gap: 1rem;
-  .article1{
+  .article1 {
     background-color: gray;
     flex: 1;
     height: 10rem;
@@ -108,5 +108,35 @@ header {
   .article2 {
     @extend .article1;
     background-color: green;
+  }
+}
+
+footer {
+  p {
+    background-color: $bannerBgColor;
+  }
+
+  .social-icons {
+    display: flex;
+
+    $textColors: black, red, green, blue, orange;
+    @for $i from 1 through length($textColors){
+        .social#{$i}{
+            flex: 1;
+            font-size: $i*1rem;
+            @if $i%2 ==0{
+            background-color: darken(yellow, $i*3);
+
+            }@else{
+                  background-color: darken(blue, $i*3);
+            }
+          
+
+        }
+
+        color: nth($textColors , $i );
+
+
+    }
   }
 }

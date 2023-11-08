@@ -133,4 +133,41 @@ header ul li a:hover {
   background-color: green;
 }
 
+footer p {
+  background-color: hotpink;
+}
+footer .social-icons {
+  display: flex;
+  color: black;
+  color: red;
+  color: green;
+  color: blue;
+  color: orange;
+}
+footer .social-icons .social1 {
+  flex: 1;
+  font-size: 1rem;
+  background-color: #0000f0;
+}
+footer .social-icons .social2 {
+  flex: 1;
+  font-size: 2rem;
+  background-color: #e0e000;
+}
+footer .social-icons .social3 {
+  flex: 1;
+  font-size: 3rem;
+  background-color: #0000d1;
+}
+footer .social-icons .social4 {
+  flex: 1;
+  font-size: 4rem;
+  background-color: #c2c200;
+}
+footer .social-icons .social5 {
+  flex: 1;
+  font-size: 5rem;
+  background-color: #0000b3;
+}
+
 /*# sourceMappingURL=style.css.map */
