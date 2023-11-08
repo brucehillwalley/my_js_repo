@@ -1,4 +1,5 @@
 @import "variables";
+@import "reset";
 // burada da değişken tanımlayabilirsin
 
 body {
@@ -8,21 +9,43 @@ body {
   background-color: $bgColor;
 }
 header {
-  background-color: #30a7c3;
+  background-color:$navBgColor;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   img {
-    width: 150px;
+    width: 80px;
+    border: $myBorder;
+    border-radius: 10px;
+
+    &:hover{
+        scale: 1.1;
+    }
+
+
   }
   ul {
     list-style-type: none;
     li {
       display: inline-block;
+      padding: 0.5rem;
       a {
         text-decoration: none;
         color: white;
+        &:hover{
+            text-decoration: underline;
+        }
       }
     }
   }
+}
+
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $bannerBgColor;
+    line-height: 2rem;
 }
