@@ -48,4 +48,26 @@ header {
     padding: 1rem;
     background-color: $bannerBgColor;
     line-height: 2rem;
+
+    aside{
+
+        button{
+          border: none;
+          background-color: $buttonColor;
+          border-radius: 10px;
+          padding: 0.5rem;
+          &:hover{
+            background-color: $bgColor;
+            cursor: pointer;
+          }
+        }
+    }
+
+    img{
+        width: 40%;
+        max-width: 600px;
+        min-width: 300px;
+    }
+
+   
 }
