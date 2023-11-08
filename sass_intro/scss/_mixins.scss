@@ -1,0 +1,12 @@
+@mixin card($bg, $color){
+    border-radius: 10px;
+    border: $myBorder;
+    color: $color;
+    background-color: $bg;
+    text-align: center;
+    width: 25%;
+    height: 10rem;
+    flex: 1;
+    
+
+}

@@ -65,4 +65,72 @@ header ul li a:hover {
   min-width: 300px;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                   CARDS                                   */
+/* -------------------------------------------------------------------------- */
+.cards {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 10px;
+}
+.cards .card1 {
+  border-radius: 10px;
+  border: 2px solid brown;
+  color: black;
+  background-color: yellow;
+  text-align: center;
+  width: 25%;
+  height: 10rem;
+  flex: 1;
+}
+.cards .card2 {
+  border-radius: 10px;
+  border: 2px solid brown;
+  color: yellow;
+  background-color: red;
+  text-align: center;
+  width: 25%;
+  height: 10rem;
+  flex: 1;
+}
+.cards .card3 {
+  border-radius: 10px;
+  border: 2px solid brown;
+  color: white;
+  background-color: black;
+  text-align: center;
+  width: 25%;
+  height: 10rem;
+  flex: 1;
+}
+.cards .card4 {
+  border-radius: 10px;
+  border: 2px solid brown;
+  color: yellow;
+  background-color: blue;
+  text-align: center;
+  width: 25%;
+  height: 10rem;
+  flex: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  ARTICLES                                  */
+/* -------------------------------------------------------------------------- */
+.articles {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.articles .article1, .articles .article2 {
+  background-color: gray;
+  flex: 1;
+  height: 10rem;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.articles .article2 {
+  background-color: green;
+}
+
 /*# sourceMappingURL=style.css.map */
