@@ -1,0 +1,28 @@
+@import "variables";
+// burada da değişken tanımlayabilirsin
+
+body {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color:$fontColor;
+  background-color: $bgColor;
+}
+header {
+  background-color: #30a7c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 150px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
