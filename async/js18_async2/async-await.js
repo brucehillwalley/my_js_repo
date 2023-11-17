@@ -35,16 +35,18 @@ const getNews = async () => {
 
     renderNews(data.articles);
   } catch (error) {
-    console.log(error);
+    const newsDiv = document.getElementById("news-div");
+    newsDiv.innerHTML = `
+  <h2>${error}</h2>
+  <img src="./img/404.png" />`;
   }
 };
 
 const renderNews = (news) => {
-const newsDiv=document.getElementById("news-div")
-news.forEach((element) => {
- 
-  const {title,urlToImage,url,content}=element
-  newsDiv.innerHTML+=`
+  const newsDiv = document.getElementById("news-div");
+  news.forEach((element) => {
+    const { title, urlToImage, url, content } = element;
+    newsDiv.innerHTML += `
 <div class="col-sm-6 col-md-4 col-lg-3">
   <div class="card" >
   <img src="${urlToImage}" class="card-img-top" alt="...">
@@ -54,9 +56,8 @@ news.forEach((element) => {
     <a href="${url}" target="_blank" class="btn btn-primary">Detail</a>
   </div>
   </div>
-</div>`
-});
-
+</div>`;
+  });
 };
 
 window.addEventListener("load", () => {
