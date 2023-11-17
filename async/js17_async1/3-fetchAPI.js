@@ -10,31 +10,41 @@
 //? fetch() fonksiyonu veri getirmek istediginiz kaynagin yolunu gosteren zorunlu
 //? bir parametre almaktadir ve bu istegin cevabini gosteren bir Promise dondurmektedir.
 
-console.log("FETCH")
-let veri="merhaba"
-
+console.log("FETCH");
+let veri = "merhaba";
 fetch("https://api.github.com/users")
-.then((res)=>{
+  .then((res) => {
     // console.log(res)
-    if(!res.ok){  //? fetck api de hatayı bizim yakalamamız gerakiyor
-        throw new Error(`HTTP error! status: ${res.status}`); //? bir hata fırlatıyoruz
+    if (!res.ok) {
+      //? Feetch api'da hatayi bizim yakalamiz gerekiyor.
+      throw new Error(`Hata: ${res.status}`); //? bir hata firlatiyoruz
     }
-    return res.json()})
-.then((data)=>{
-    // veri=data
-    // console.log(veri);
-   show(data)
-
-})
-.catch((err)=>document.write(err)) 
+    return res.json();
+  })
+  .then((data) => {
+    // veri = data
+    // console.log(veri)
+    show(data);
+  })
+  .catch((err) => showError(err));
 
 console.log(veri);
-const show=(user)=>{
-   const userSection=document.getElementById("users")
 
-   user.forEach(element => {
-    
-   });
-}
+const show = (users) => {
+  const userSection = document.getElementById("users");
 
+  users.forEach((user) => {
+    userSection.innerHTML += `
+        <h1>${user.login}</h1>
+        <img src="${user.avatar_url}" width="200px" alt="" />
+        <p><a href="${user.html_url}" target="_blank">URL</a></p> 
+    `;
+  });
+};
 
+const showError = (err) => {
+  const userSection = document.getElementById("users");
+  userSection.innerHTML = `<h1 style="color:red">${err}</h1>
+    <img src="./img/error401.png"/>`;
+    //?hata resmi eşleşmeye bilir rastgele ekledik
+};
