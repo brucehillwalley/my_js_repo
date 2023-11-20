@@ -20,3 +20,10 @@ export {topla,cikar,carp,bol}
 const mesaj = () => {
   console.log("Module Bitti")
 }
+
+export default mesaj //?default export yöntemi
+//? modül başına sadece bir tane export default yapılabilir
+
+// const deneme="deneme"
+// export default deneme
+// hesapmakinesi.js:28 Uncaught SyntaxError: Identifier '.default' has already been declared (at hesapmakinesi.js:28:8)

@@ -22,4 +22,15 @@ console.log("çarpım:",carp(3,4));
 
 console.log(isim);
 
+//? export default ile paylaşılan bir değişken vb. süslü parentez kullanmadan import edilir.
+//? export default da as kullanılmadan herhangi bir isim kullanılabilir
+import ifade from "./hesapmakinesi.js";
+ifade()
 //! 1- import'lar hoisted olur bu yüzden herhangi bir yerde eklenebilir ancak best practice en üste eklenmeleridir.
+
+//! 2- top-level this kullanimi window objesini göstermez.
+console.log(this) //? undefined
+
+//! 3- default olarak 'use strict' aciktir. Dolayısıyla Daha katı bir şekilde derleme yapilir.
+variable = 2
+console.log(variable)
