@@ -28,6 +28,9 @@ const products = [
 
 console.log("toplam fiyat:", calculatePrice(products));
 
+"use strict";
+deneme=5
+console.log(deneme);
 
 //? Uygulamalar büyüdükçe kodlari tek bir JS dosyasına koymak bu kodun sürdürülebilirliğini ve anlaşılabiliriliğini imkansız hale getirmeye başlar.
 
