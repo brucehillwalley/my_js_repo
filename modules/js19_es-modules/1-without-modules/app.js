@@ -1,11 +1,10 @@
 console.log("App JS");
 
-const h1=document.querySelector("h1")
+const h1 = document.querySelector("h1");
 
+h1.textContent = "Without module";
 
-h1.textContent = "Without module"
-
-const users = ["Ahmet", "Mehmet", "İsmet", "Saffet"]
+const users = ["Ahmet", "Mehmet", "İsmet", "Saffet"];
 
 const products = [
   {
@@ -23,13 +22,12 @@ const products = [
     type: "Mate60",
     price: 45000,
   },
-]
-
+];
 
 console.log("toplam fiyat:", calculatePrice(products));
 
-"use strict";
-deneme=5
+// ("use strict")
+deneme = 5;
 console.log(deneme);
 
 //? Uygulamalar büyüdükçe kodlari tek bir JS dosyasına koymak bu kodun sürdürülebilirliğini ve anlaşılabiliriliğini imkansız hale getirmeye başlar.
