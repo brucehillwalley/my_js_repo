@@ -7,6 +7,8 @@ console.log(topla(3,5));
 console.log(maxvalue);
 console.log(pi);
 
+const {code_cloud}=require("./app")
+console.log(code_cloud);
 // prompt("merhaba")
 //! node prompt komutunu bilmez DOM da çünkü
 

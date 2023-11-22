@@ -9,3 +9,5 @@ const calculatePrice = (products) => {
 //? const users=["ali","veli"]
 //? Uncaught SyntaxError: Identifier 'users' has already been declared (at app.js:1:1)
 //! aynı isimleri kullanamayız app.js de tanımlı
+
+

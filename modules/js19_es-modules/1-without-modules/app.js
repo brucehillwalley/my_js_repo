@@ -26,7 +26,7 @@ const products = [
 
 console.log("toplam fiyat:", calculatePrice(products));
 
-// ("use strict")
+"use strict";
 deneme = 5;
 console.log(deneme);
 

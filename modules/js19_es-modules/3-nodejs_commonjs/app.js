@@ -9,3 +9,7 @@ exports.maxvalue=MAX_VALUE
 const PI=3.14
 
 exports.pi=PI
+
+const code_cloud="harika takım"
+
+exports.code_cloud=code_cloud
