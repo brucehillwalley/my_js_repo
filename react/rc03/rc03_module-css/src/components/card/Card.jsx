@@ -3,6 +3,12 @@ import CardStyle from "./Card.module.css"
 import data from "../../data"
 import Buton from "../buton/Buton"
 
+//* module.css'de derleyici CSS class'larini alarak bunlari unique olacak
+//* sekilde yeniden adlandirir. (Ornek: card_title__XaSde)
+//* Bu durumda, global scope problemi ortadan kalktigi icin stillerin
+//* baska class tarafindan ezilmesi (overriding) engellenir.
+//* Module-CSS, Webpack, Browsify gibi tool'lar ile kullanilabilir.
+
 const Card = () => {
   console.log(data)
   return (
