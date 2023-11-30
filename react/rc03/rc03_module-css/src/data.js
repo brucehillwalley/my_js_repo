@@ -1,3 +1,4 @@
+//? JSON (mock data)
 const data = [
   {
     id: 1,
