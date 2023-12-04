@@ -18,11 +18,11 @@
 //?    https://react.dev/reference/react/hooks#state-hooks
 //* =============================================================
 
-import { useState } from "react"
+import { useState} from "react"
 
 const UseStateCounter = () => {
   // let sayac = 0
-  //? useState hook'u ile sayac adinda bir state tanimladik.
+  //? useState hook'u ile sayac adinda bir state tanimladik.en üstte olmalı ve nested olmamalı
   const [sayac, setSayac] = useState(0)
 
   console.log(sayac)
