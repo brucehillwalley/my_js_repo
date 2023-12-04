@@ -44,7 +44,7 @@ class Counter extends React.Component {
       <div>
         <h2>Class Components</h2>
         <h1>Count:{this.state.count}</h1>
-        <button onClick={this.increment} className="btn btn-success">
+        <button onClick={this.increment} >
           INC
         </button>
         <button onClick={() => this.setState({ count: 0 })}>CLR</button>
