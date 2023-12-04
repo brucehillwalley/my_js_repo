@@ -1,7 +1,10 @@
+import Event from "./1-events/Event"
+
 function App() {
   return (
     <div>
-      <h1>Events</h1>
+    
+      <Event/>
     </div>
   )
 }
