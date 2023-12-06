@@ -3,36 +3,29 @@ import Form from "react-bootstrap/Form"
 import Container from "react-bootstrap/Container"
 import { useState } from "react"
 
-const Forms = () => {
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+const FormsObject = () => {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  })
 
-  const handleUsername = (e) => {
-    setUsername(e.target.value)
+  //? destr.
+  const { username, password, email } = data
+
+  const handleData = (e) => {
+    console.log(e.target.id)
   }
 
   const handleFormSubmit = (e) => {
-    // console.log(e.target)
     e.preventDefault()
     alert(`
       username: ${username},
       email: ${email},
       password: ${password}
    `)
-
-    setEmail("")
-    setPassword("")
-    setUsername("")
-
-    //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini gostermek adina eklenmistir.
-    //? const res = axios.post("url", { username, password, email })
-    //* Alternatif olarak
-    //? fetch("url", { method: "POST, data: {username, password, email} })
-    //? .then()
   }
 
-  console.log(password)
   return (
     <Container className="mt-4">
       <Form onSubmit={handleFormSubmit}>
@@ -45,7 +38,7 @@ const Forms = () => {
           <Form.Control
             type="text"
             placeholder="Username"
-            onChange={handleUsername}
+            onChange={handleData}
             value={username}
             id="username"
             required
@@ -59,8 +52,7 @@ const Forms = () => {
           <Form.Control
             type="email"
             placeholder="Enter email"
-            //? OnChange event'ı input degeri her degistiginde tetiklenir. Biz de yazdıgımız event handler araciligi ile State'i guncelleyebilmis oluruz.
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleData}
             value={email}
             id="email"
           />
@@ -71,8 +63,9 @@ const Forms = () => {
           <Form.Control
             type="password"
             placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleData}
             value={password}
+            id="password"
           />
         </Form.Group>
 
@@ -84,4 +77,4 @@ const Forms = () => {
   )
 }
 
-export default Forms
+export default FormsObject
