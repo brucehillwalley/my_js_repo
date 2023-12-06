@@ -14,8 +14,16 @@ const Forms = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-   
-  };
+   alert(`Hello ${username}, your email is ${email} and your password is ${password}`)
+ setEmail("");
+ setPassword("");
+ setUsername("");
+   // axios.post('https://reqres.in/api/users', {
+  //   username: username,
+  //   email: email,
+  //   password: password
+  // })
+};
 
   return (
     <Container className="mt-4">
