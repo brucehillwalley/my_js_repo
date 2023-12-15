@@ -1,40 +1,19 @@
 import { FaEdit } from "react-icons/fa"
 import { AiFillDelete } from "react-icons/ai"
-import axios from "axios"
-import EditTutorial from "./EditTutorial"
-import { useState } from "react"
 
-const TutorialList = ({ tutorials, getTutorials }) => {
-  const [editData, setEditData] = useState("")
-  //? mock data
-  // const tutorials = [
-  //   {
-  //     id: 1,
-  //     title: "JS",
-  //     description: "JS is a programming language",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "React",
-  //     description: "JS library for UI design",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "Solid.JS",
-  //     description: "JS library for UI design",
-  //   },
-  // ]
-
-  const deleteTutorial = async (id) => {
-    try {
-      await axios.delete(`${process.env.REACT_APP_URL}${id}/`)
-    } catch (error) {
-      console.log(error)
-    }
-    getTutorials()
-  }
-
-  console.log(editData)
+const TutorialList = () => {
+  const tutorials = [
+    {
+      id: 1,
+      title: "JS",
+      description: "JS is a programming language",
+    },
+    {
+      id: 2,
+      title: "React",
+      description: "JS library for UI design",
+    },
+  ]
 
   return (
     <div className="container mt-4">
@@ -62,15 +41,11 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
-                    data-bs-toggle="modal"
-                    data-bs-target="#open-modal"
-                    onClick={() => setEditData(item)}
                   />
                   <AiFillDelete
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
@@ -78,7 +53,6 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
-      <EditTutorial editData={editData} />
     </div>
   )
 }
