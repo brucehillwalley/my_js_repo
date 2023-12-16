@@ -4,16 +4,26 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import People from "./pages/People";
 import NotFound from "./pages/NotFound";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Paths from "./pages/Paths";
 
 function App() {
   return (
     <>
-      <Nav />
-      <Home />
-      <People />
-      <Contact />
-      <NotFound />
-      <Footer />
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route path="/" element={<Home />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/paths" element={<Paths />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
