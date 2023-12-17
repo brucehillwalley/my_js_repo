@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react"
 
-const EditTutorial = ({ editData, getTutorials }) => {
-  const { title: oldTitle, description: oldDescription, id } = editData;
+const EditTutorial = ({ editData }) => {
+  const { title: oldTitle, description: oldDescription } = editData
 
-  const [title, setTitle] = useState(oldTitle);
-  const [description, setDescription] = useState(oldDescription);
+  const [title, setTitle] = useState(oldTitle)
+  const [description, setDescription] = useState(oldDescription)
 
   //? https://react.dev/reference/react/useState#usestate
   //! State degiskeninin degeri, 1.render ile initialState
@@ -18,23 +17,9 @@ const EditTutorial = ({ editData, getTutorials }) => {
 
   //? componentDidUpdate
   useEffect(() => {
-    setTitle(oldTitle);
-    setDescription(oldDescription);
-  }, [oldTitle, oldDescription]);
-
-  const editTutorial = async (tutorial) => {
-    try {
-      await axios.put(`${process.env.REACT_APP_URL}${id}/`, tutorial);
-      getTutorials();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    editTutorial({title,description})
-  };
+    setTitle(oldTitle)
+    setDescription(oldDescription)
+  }, [oldTitle, oldDescription])
 
   return (
     <>
@@ -55,18 +40,15 @@ const EditTutorial = ({ editData, getTutorials }) => {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                // MODALIN KAPANIŞI
-
-                
                 aria-label="Close"
                 onClick={() => {
-                  setTitle("");
-                  setDescription("");
+                  setTitle("")
+                  setDescription("")
                 }}
               />
             </div>
             <div className="modal-body">
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">
                     Title
@@ -95,7 +77,7 @@ const EditTutorial = ({ editData, getTutorials }) => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-danger mb-4"  data-bs-dismiss="modal">
+                <button type="submit" className="btn btn-danger mb-4">
                   Submit
                 </button>
               </form>
@@ -104,7 +86,7 @@ const EditTutorial = ({ editData, getTutorials }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default EditTutorial;
+export default EditTutorial

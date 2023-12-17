@@ -4,8 +4,8 @@ import axios from "axios"
 import EditTutorial from "./EditTutorial"
 import { useState } from "react"
 
-const TutorialList = ({ tutorials, getTutorials }) => {
-  const [editData, setEditData] = useState("")
+const TutorialList = ({ tutorials, getTutorials,setEditData }) => {
+ 
   //? mock data
   // const tutorials = [
   //   {
@@ -34,7 +34,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
     getTutorials()
   }
 
-  console.log(editData)
+  // console.log(editData)
 
   return (
     <div className="container mt-4">
@@ -78,7 +78,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
-      <EditTutorial editData={editData} getTutorials={getTutorials} />
+      {/* <EditTutorial editData={editData} /> */}
     </div>
   )
 }
