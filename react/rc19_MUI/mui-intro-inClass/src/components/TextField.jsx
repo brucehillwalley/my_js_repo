@@ -1,7 +1,12 @@
 import Container from "@mui/material/Container"
 import TextField from "@mui/material/TextField"
+import { useState } from "react"
 
 const TextFieldComp = () => {
+
+    const [error, setError] = useState(false)
+
+
   return (
     <Container
       maxWidth="sm"
@@ -13,9 +18,11 @@ const TextFieldComp = () => {
         label="email"
         variant="outlined"
         placeholder="Enter your email"
-        color="warning"
+        color="success"
         required
         fullWidth
+        error={error}
+        helperText={error && "incorrect email format"}
       />
       <TextField
         id="password"
@@ -32,6 +39,7 @@ const TextFieldComp = () => {
         fullWidth
         type="text"
         margin="normal"
+        helperText="Adress"
       />
     </Container>
   )
