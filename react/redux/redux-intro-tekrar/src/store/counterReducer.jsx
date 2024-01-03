@@ -3,20 +3,31 @@ const initialState = {
 };
 
 //? type'ların constant olarak tanımlanması
-export const INC = 'INC'
-export const DEC = 'DEC'
-export const CLR = 'CLR'
+export const INC = "INC";
+export const DEC = "DEC";
+export const CLR = "CLR";
 
+//? Action creater fonksiyonlarının tanımlanması
+
+export const increment = () => ({
+  type: INC,
+});
+export const decrement = () => ({
+  type: DEC,
+});
+export const clear = () => ({
+  type: CLR,
+});
 
 export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INC:
       return { count: state.count + 1 };
     case DEC: {
-        return { count: state.count - 1 };
+      return { count: state.count - 1 };
     }
     case CLR: {
-        return { count:0 };
+      return { count: 0 };
     }
 
     default:
