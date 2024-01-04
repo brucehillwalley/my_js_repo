@@ -8,16 +8,15 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setUser: (state, {type, payload}) => {
-        state.user=payload
-
+    setUser: (state, { type, payload }) => {
+      state.user = payload;
     },
     clearUser: (state) => {
-        state.user={ email: "", password: "" }
+      state.user = { email: "", password: "" };
     },
   },
 });
 
-export const {setUser,clearUser}=authSlice.actions
+export const { setUser, clearUser } = authSlice.actions;
 
-export default authSlice.reducer
+export default authSlice.reducer; //? store da authReducer olarak import edildi
