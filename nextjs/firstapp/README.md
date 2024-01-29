@@ -3,6 +3,8 @@
 - " . "
 - Tailwind yes, App Router yes
 
+- app folder içindeki page.js "/" route olan home sayfasıdır
+- nextjs'de tüm componentler default olarak server componenttir. client component kullanmak için "use-client" direktifini kullanmamız gerekir
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
