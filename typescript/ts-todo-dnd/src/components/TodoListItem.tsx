@@ -25,7 +25,7 @@ const TodoListItem: FC<ITodoListItem> = ({
             sx={{ cursor: "move", padding: "1rem" }}
           >
             <ListItemText
-              primary={todo.todo}
+              primary={todo.task}
               sx={{ wordWrap: "break-word" }}
             />
           </ListItem>
