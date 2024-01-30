@@ -1,3 +1,4 @@
+https://www.youtube.com/watch?v=-wEXRsuxi3Y&t=2s
 # [PromptHub]
 
 **Welcome to our Workshop**, clone this repository to follow along.

@@ -1,3 +1,5 @@
+//? projeyi saran bir kılıf style dosya bazlı olarak style verebiriz children comp lara . dosya ismi layout olmalı
+
 import "@styles/globals.css";
 // import Provider from "@components/Provider";
 import Nav from "@components/Nav";
