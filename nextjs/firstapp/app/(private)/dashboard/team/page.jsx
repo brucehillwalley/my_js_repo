@@ -3,6 +3,11 @@ import GoBackButton from "@/components/GoBack";
 import { getUsers } from "@/helpers/apiFunctions";
 import React from "react";
 
+export const metadata = {
+  title: "Team Page",
+  description: "Users of distinguish application",
+};
+
 const Team = async () => {
   const users = await getUsers();
   console.log(users);

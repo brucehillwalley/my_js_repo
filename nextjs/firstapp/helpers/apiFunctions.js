@@ -1,6 +1,6 @@
 
 export async function getUsers() {
-    const res = await fetch('http://localhost:8080/users')
+    const res = await fetch('http://localhost:8080/users', {cache:"force-cache"})
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
    
