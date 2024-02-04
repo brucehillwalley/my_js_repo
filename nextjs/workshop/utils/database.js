@@ -12,6 +12,7 @@ export const connectToDB = async () => {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "prompthub",
       useNewUrlParser: true,
+      //? sürüm farklılıklarından kurtulmak için
       useUnifiedTopology: true,
     });
     isConnected = true;

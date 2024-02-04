@@ -6,7 +6,7 @@
 - server side bazlı çalışır client olarak da kullanılabilir. static side ise data çok değişmiyorsa kullanılır. 
 - Dosya tabanlı bir routing yöntemi kullanır. app klasörü içerisndeki her bir dosya bir route anlamına gelir.
 - Next.js 9 dan sonra gelen Api Routes özelliği ile full stack development environment olarak kulllanmamızza olanak verriyor.
-- server component client comp leri var
+- server component, client comp leri var
 
 
 # [PromptHub]
