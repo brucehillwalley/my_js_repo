@@ -23,6 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//+ login
 Cypress.Commands.add("login", () => {
     cy.url().should('include', '/')
     cy.get('[data-test="loginHeader"]').contains("Recipe").should('be.visible')
