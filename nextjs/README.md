@@ -1,4 +1,4 @@
-# [Nextjs Nootes]
+# Nextjs Nootes
 - react üzerine kurulmuştur. Kendi dökümanı da nextjs kullanımına teşvik ediyor. 
 - Nextjs dev sürecini kolaylaştırır.
 - Web uygulamalarımızı daha optimize bir hale getirir.
@@ -9,6 +9,10 @@
 - server component, client comp leri var
 
 
+## Workshop videoları
+1. https://www.youtube.com/watch?v=-wEXRsuxi3Y
+2. https://www.youtube.com/watch?v=Ax-7TSO-_uk
+3. https://www.youtube.com/watch?v=9JoalNF3zqw
 # [PromptHub]
 
 **Welcome to our Workshop**, clone this repository to follow along.
