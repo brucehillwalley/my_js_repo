@@ -36,7 +36,7 @@ const handler = NextAuth({
             email: profile.email,
             //burasi
             username: profile.name.replace(" ", "").toLowerCase(),
-            image: profile.image,
+            image: profile.picture,
             prompts: [],
           });
         }

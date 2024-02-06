@@ -33,15 +33,16 @@ const Feed = () => {
   const getFilteredPrompts = async () => {
     const response = await fetch(`/api/prompt/filterPrompt/${search}`);
     const data = await response.json();
-
+   
     setPrompts(data);
+   
   };
   useEffect(() => {
     if (search?.length > 0) {
       const timeOut = setTimeout(() => {
         getFilteredPrompts();
       }, 300);
-      //! timeOut ile her harf yazışımızda istek atmasını 3 sn bekletiyoruz. Böylece aramayı yavaslatarak kelime yazıldığında istek atmasını saglayacak
+      //! timeOut ile her harf yazışımızda istek atmasını 0.333 sn bekletiyoruz. Böylece aramayı yavaslatarak kelime yazıldığında istek atmasını saglayacak
       return () => clearTimeout(timeOut);
     } else {
       getPrompts();

@@ -20,6 +20,6 @@ const promptSchema = new Schema({
 });
 
 const Prompt = models.Prompt || model("Prompt", promptSchema);
-//? prompt modeliş varsa al yoksa oluştur
+//? prompt modeli varsa al yoksa oluştur
 
 export default Prompt;
