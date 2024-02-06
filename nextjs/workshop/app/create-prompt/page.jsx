@@ -35,6 +35,7 @@ const CreatePrompt = () => {
       });
       setIsSubmitting(false);
       if (response.ok) {
+        // console.log(await response.json());
         router?.push(`/`);
         // router.push(`/profile/${data.userId}`);
       } else {

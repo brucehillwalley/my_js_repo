@@ -1,4 +1,4 @@
-// import Feed from "@components/Feed";
+import Feed from "@components/Feed";
 
 const Home = () => {
   // throw new Error("This is a test error")
@@ -12,7 +12,7 @@ const Home = () => {
         prompts.
       </p>
 
-      {/* <Feed data /> */}
+      <Feed />
     </section>
   );
 };
