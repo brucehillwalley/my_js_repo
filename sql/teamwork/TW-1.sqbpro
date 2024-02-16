@@ -1,0 +1,156 @@
+--1
+SELECT name , Composer
+FROM tracks;
+--2
+SELECT *
+FROM tracks;
+--3
+SELECT  Composer
+FROM tracks;
+--4
+SELECT DISTINCT AlbumId,  MediaTypeId
+FROM tracks;
+--5
+SELECT name,TrackId
+FROM tracks
+WHERE Composer="Jorge Ben";
+--6
+select *
+FROM invoices
+WHERE total >15; 
+--7
+select *
+FROM invoices
+where total < 15
+LIMIT 5;
+--8
+SELECT *
+FROM invoices
+where total > 10
+order by total DESC
+LIMIT 2;
+--9
+SELECT * FROM invoices 
+WHERE BillingCity NOT IN('Canada') 
+ORDER BY total
+ ASC LIMIT 10;
+--10
+
+SELECT InvoiceId, CustomerId, total
+from invoices
+ORDER by CustomerId asc , total desc;
+
+--11
+SELECT name
+FROM tracks
+where name like "b%S";
+
+--12
+SELECT InvoiceDate
+FROM invoices
+where InvoiceDate BETWEEN "2008-01-01" AND "2012-01-01"
+ORDER by InvoiceDate DESC
+LIMIT 1;
+
+--13
+select FirstName , LastName
+FROM customers
+where Country IN ("Norway", "Belgium");
+
+select FirstName , LastName
+FROM customers
+where Country = "Norway" or Country= "Belgium";
+
+--13
+select Composer, name
+from tracks
+where Composer like "%Bach";
+
+--15
+SELECT Count(*)
+FROM tracks;
+
+SELECT Count(*)
+from invoices;
+
+--16 
+select Count( DISTINCT composer)
+FROM tracks;
+
+--17
+select AlbumId ,count(*) as number_tracks
+from  tracks
+GROUP by AlbumId
+ORDER by number_tracks desc;
+
+--18 
+SELECT name, min(milliseconds) as minduration , 
+FROM tracks;
+
+SELECT name, Milliseconds
+FROM tracks
+WHERE milliseconds = (SELECT MIN(milliseconds) FROM tracks)
+
+UNION
+
+ SELECT name, Milliseconds
+ FROM tracks
+ WHERE milliseconds = (SELECT MAX(milliseconds) FROM tracks);
+ 
+ --19
+ SELECT *
+ from tracks
+ where Milliseconds < 
+ (select AVG(milliseconds)
+ from tracks)
+
+ 
+ 
+--24
+
+select  albums.title, SUM(tracks.Milliseconds) as total_duration
+from tracks
+join albums on tracks.AlbumId=albums.AlbumId
+group by tracks.AlbumId
+having total_duration>3600000
+order by total_duration desc;
+
+
+--20
+select Composer , count(*)
+from tracks
+group by composer;
+
+SELECT composer , Count(composer)
+from tracks
+where composer IS Not NULL
+group by composer;
+
+--21
+select  tra.name,g.Name
+from tracks tra
+join genres g
+on tra.GenreId=g.GenreId;
+
+--22
+SELECT *
+FROM artists
+left join albums
+on artists.ArtistId=albums.ArtistId;
+
+--23
+SELECT tracks.AlbumId, albums.Title ,min(tracks.Milliseconds) as min_dur
+FROM tracks
+join albums 
+on
+tracks.AlbumId = albums.AlbumId
+GROUP by tracks.AlbumId,albums.Title
+ORDER by min_dur desc;
+
+--25
+select TrackId, name, AlbumId
+from tracks
+where AlbumId in (SELECT AlbumId from albums where title in
+( "Prenda Minha","Heart of the Night" , "Out Of Exile"));
+
+

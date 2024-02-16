@@ -1,0 +1,27 @@
+-- SQL commands
+-- SELECT fields FROM Tables
+-- customers tablosundan ad soyad ve city sütünlarını getiren sql ifadesi 
+SELECT FirstName,LastName,City FROM customers;
+-- customers tablosundaki tüm sütunlar
+SELECT * FROM customers;
+SELECT DISTINCT Country,City  FROM customers;
+SELECT DISTINCT FirstName  FROM customers;
+-- şart WHERE
+-- SELECT fields FROM Tables WHERE condition
+SELECT * FROM customers WHERE Country='Brazil';
+SELECT * FROM tracks WHERE Milliseconds=2555492;
+SELECT * FROM tracks WHERE Milliseconds=2555492;
+SELECT * FROM invoices WHERE total>5 and total<9;
+
+-- SELECT fields FROM Tables WHERE condition LIMIT number
+SELECT * FROM invoices LIMIT 3;
+-- SELECT fields FROM Tables WHERE condition LIMIT number ORDER BY ASC/DESC
+SELECT * FROM invoices ORDER BY total DESC;
+SELECT * FROM invoices ORDER BY BillingCity,BillingCountry LIMIT 2;
+SELECT * FROM invoices ORDER BY total DESC LIMIT 1;
+SELECT * FROM invoices WHERE InvoiceDate BETWEEN "2009-01-01" and "2009-03-04"; 
+SELECT * FROM invoices WHERE BillingCity IN('Paris','London');
+SELECT * FROM invoices WHERE BillingCity NOT IN('Paris','London');
+
+
+

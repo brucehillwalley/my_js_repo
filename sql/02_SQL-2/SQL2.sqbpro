@@ -1,0 +1,118 @@
+--SELECT * FROM Table WHERE
+-- sutun isimlerini tablo ismi ile beraber yazmanaızddaa fayda var
+-- SELECT  albums.Title 
+-- FROM albums;
+-- WHERE şart / filtreleme
+-- =,!=,<>,>,>=,<,<=
+-- AND, OR, NOT
+SELECT * 
+FROM invoices 
+WHERE BillingCity='Berlin' AND BillingCountry='Germany';
+SELECT * 
+FROM invoices 
+WHERE BillingCountry='Canada' OR BillingCountry='Germany';
+SELECT * 
+FROM invoices 
+WHERE  NOT BillingCountry='USA';
+-- BETWEEN, IN, NOT IN
+SELECT * 
+FROM invoices 
+WHERE BillingCountry IN ('Germany','USA');
+
+-- LIKE %,_
+SELECT * FROM invoices WHERE BillingCity LIKE 'Oslo';
+SELECT * FROM invoices WHERE BillingCity like 'E%';
+SELECT * FROM invoices WHERE BillingCity like '%t';
+SELECT * FROM invoices WHERE BillingCity like '___E%'; --ilk 3 onemli degil
+SELECT * FROM invoices WHERE BillingCity like '%t_';
+SELECT * FROM invoices WHERE BillingCity like '%t_' ORDER BY BillingCountry DESC;
+-- Funcitons MIN,MAX,AVG,SUM,COUNT
+SELECT MIN(total),CustomerId FROM invoices;
+SELECT total,CustomerId FROM invoices ORDER BY total;
+SELECT  fatura.total FROM invoices as fatura;
+SELECT MIN(total)as ENDUSUK,
+MAX(total)as ENYUKSEK,
+ROUND(AVG(total),2) as ORTALAMA,
+SUM(total) as TOPLAM 
+FROM invoices as fatura;
+-- GROUP BY
+SELECT BillingCountry, MIN(total) FROM invoices GROUP BY BillingCountry;
+-- toplam fatura sayısı
+SELECT COUNT(total) FROM invoices;--412
+SELECT COUNT(BillingState) FROM invoices;--210 nul sayılmaz
+-- her bir ülke için kesilen toplam fatura sayısı
+SELECT BillingCountry,BillingCity, COUNT(total)
+FROM invoices GROUP BY BillingCountry,BillingCity;
+-- fatura kesilen ülke sayısı
+SELECT COUNT(DISTINCT BillingCountry) 
+FROM invoices;
+SELECT  BillingCountry, Count(*) FROM invoices GROUP BY BillingCountry;
+SELECT  GenreId, Count(*) FROM tracks GROUP BY GenreId;
+
+--Ortalama faturanın üzerinde kesilen faturala
+SELECT AVG(total) FROM invoices; -- ortalama 
+SELECT * FROM invoices WHERE total>5.65194174757283;
+SELECT * 
+FROM invoices 
+WHERE total>(
+SELECT AVG(total) FROM invoices);
+-- JAzz türünde parçalar
+SELECT * FROM tracks WHERE GenreId=2;
+SELECT * FROM genres WHERE name='Jazz';
+
+SELECT * 
+FROM tracks 
+WHERE GenreId=(SELECT GenreId FROM genres WHERE name='Jazz');
+
+SELECT * 
+FROM tracks 
+WHERE AlbumId=(SELECT AlbumId FROM albums WHERE Title='Big Ones');
+
+SELECT tracks.Name 
+FROM tracks
+WHERE AlbumId IN
+(SELECT AlbumId FROM albums WHERE Title='Big Ones' or Title='Fireball');
+
+
+--INNER JOIN
+-- tracks tablosundaki her parçanın isminide getir
+SELECT * 
+FROM tabloName1 JOIN tableName2 ON  Column1=Column2;
+SELECT albums.Title as albumname,tracks.Name as sarkiname 
+FROM tracks JOIN albums ON  tracks.AlbumId=albums.AlbumId;
+-- hangi fatura kime kesildi
+SELECT * 
+FROM invoices INNER JOIN customers 
+ON  invoices.CustomerId=customers.CustomerId;
+-- hangi parça hangi türe ait
+SELECT genres.Name,tracks.Name
+FROM tracks JOIN genres 
+ON  genres.GenreId=tracks.GenreId ORDER by genres.Name ;
+--her bir parçanın tür, medya tipi ve album bilgisini getir
+SELECT genres.Name,media_types.Name,tracks.Name
+FROM tracks
+JOIN albums on tracks.AlbumId=albums.AlbumId
+JOIN media_types on tracks.MediaTypeId=media_types.MediaTypeId
+JOIN genres on tracks.GenreId=genres.GenreId;
+
+--LEFT JOIN 
+--
+SELECT *
+FROM genres 
+LEFT JOIN tracks on genres.GenreId=tracks.GenreId;
+
+
+-- RIGHT JOIN  sqlite right join desteklemiyor
+SELECT *
+FROM genres 
+RIGHT JOIN tracks on genres.GenreId=tracks.GenreId;
+SELECT *
+FROM tracks 
+LEFT JOIN genres on genres.GenreId=tracks.GenreId;
+SELECT *
+FROM artists  
+LEFT JOIN albums on artists.ArtistId=albums.ArtistId;
+
+
+-- FULL JOIN
+-- CROSS JOIN
