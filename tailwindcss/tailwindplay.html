@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode:"class",
           theme: {
             extend: {
               colors: {
@@ -75,7 +76,7 @@
       </main>
       
       <!-- // To showcase the demo of dark theme. Copy paste :) -->
-      <!-- // it works in tailwindplay -->
+      <!-- ! Don't forget to add config darkMode: 'class' -->
       <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", () => {
           const toggleDark = document.getElementById('toggleDark')
@@ -86,7 +87,7 @@
             else {
               document.documentElement.classList.add('dark')
             }
-            alert("click!")
+            
           });
         });
       </script>
